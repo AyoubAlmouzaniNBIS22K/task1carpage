@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Enthusiast Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 2em;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: rgb(255, 255, 255);
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0em 1em;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 2em;
+            margin: 2em 0;
+        }
+        #section1 {
+            background-color: #b8ebef;
+        }
+        #section2 {
+            background-color: #32e3f0;
+        }
+        #section3 {
+            background-color: #066b69;
+        }
+        .responsive {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#section1">Classic Cars</a>
+        <a href="#section2">Sports Cars</a>
+        <a href="#section3">Electric Cars</a>
+    </nav>
+    <section id="section1">
+        <h1>Classic Cars</h1>
+        <p>This section is for the Classic Cars </p>
+        <img src="classic.png" alt="Classic Car" class="responsive">
+    </section>
+    <section id="section2">
+        <h1>Sports Cars</h1>
+        <p>This section is for the Sports Cars </p>
+        <img src="sport.jpg" alt="Sports Car" class="responsive">
+    </section>
+    <section id="section3">
+        <h1>Electric Cars</h1>
+        <p>This section is for the Electric Cars </p>
+        <img src="electric.jpeg" alt="Electric Car" class="responsive">
+    </section>
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
